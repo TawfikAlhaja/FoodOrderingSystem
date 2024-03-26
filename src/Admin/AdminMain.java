@@ -1,17 +1,23 @@
 package Admin;
 
+import Admin.*;
 import LoginRegistration.LoginPage;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+
 public class AdminMain extends javax.swing.JFrame {
 
    
+   
+    
     public AdminMain() {
         initComponents();
         MakeUI();
     }
+    
+    
 
     
    private void MakeUI() {
@@ -31,8 +37,24 @@ public class AdminMain extends javax.swing.JFrame {
 
 private void customizeButton(JButton button) {
     button.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    button.setIconTextGap(10); // Adjust the gap as needed
+    button.setIconTextGap(10); //gap 
     makeButtonTransparent(button);
+    
+    
+    // Add mouse listener for hover effect
+    button.addMouseListener(new java.awt.event.MouseAdapter() {
+        public void mouseEntered(java.awt.event.MouseEvent evt) {
+            if (!button.getBackground().equals(new Color(0, 51, 102))) {
+                button.setBackground(new Color(41, 122, 204)); // Apply hover effect
+            }
+        }
+
+        public void mouseExited(java.awt.event.MouseEvent evt) {
+            if (!button.getBackground().equals(new Color(0, 51, 102))) {
+                button.setBackground(new Color(51, 153, 255)); // Revert to original color
+            }
+        }
+    });
     
 }
 
@@ -252,7 +274,7 @@ private void makeButtonTransparent(JButton button) {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,6 +292,7 @@ private void makeButtonTransparent(JButton button) {
         
         // BackEnd
         
+        
     }//GEN-LAST:event_jButtonDashboardActionPerformed
 
     private void jButtonAccountsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccountsActionPerformed
@@ -278,6 +301,7 @@ private void makeButtonTransparent(JButton button) {
         resetButtonColorsExcept(jButtonAccounts);
         
         // BackEnd
+        
     }//GEN-LAST:event_jButtonAccountsActionPerformed
 
     private void jButtonNotificationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNotificationsActionPerformed
@@ -359,6 +383,13 @@ private void resetButtonColorsExcept(JButton selectedButton) {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
